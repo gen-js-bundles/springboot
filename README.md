@@ -5,10 +5,12 @@ genjs bundle
 ```
 => Download ```SpringBoot```
 
-# Build tool
+# Model
 
-* Maven : ```model/config.@maven.yml```
-* Gradle : ```model/config.@gradle.yml```
+Copy one of the config.yml :
+
+* ```model/config.@maven.yml``` : for Maven
+* ```model/config.@gradle.yml``` : for Gradle
 
 => Content :
 ```
