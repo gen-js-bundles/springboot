@@ -9,8 +9,8 @@ genjs bundle
 
 Copy one of the config.yml :
 
-* ```model/config.@maven.yml``` : for Maven
-* ```model/config.@gradle.yml``` : for Gradle
+* for Maven : ```model/config.@maven.yml```
+* for Gradle : ```model/config.@gradle.yml```
 
 => Content :
 ```
