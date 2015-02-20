@@ -1,0 +1,21 @@
+<%
+  var security = entities.config.tags.security;
+  if(security != null) {
+%>
+# SECURITY (SecurityProperties)
+security:
+  <% if(security.user != null) { %>
+  user:
+    <% if(security.user.name != null) { %>
+    name: <%=security.user.name%>
+    <% } %>
+    <% if(security.user.password != null) { %>
+    password: <%= security.user.password %>
+    <% } %>
+    <% if(security.user.role != null) { %>
+    role: <%= security.user.role %>
+    <% } %>
+  <% } %>
+<%
+  }
+%>
