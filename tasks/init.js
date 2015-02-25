@@ -1,16 +1,32 @@
-var inquirer = require("inquirer");
+var
+  inquirer = require("inquirer"),
+  fs = require('fs'),
+  path = require('path'),
+  gfile = require('gfilesync');
 
 module.exports = {
   askFor: function() {
     var questions = [
       {
-        type: 'input',
-        name: 'name',
-        message: 'Name'
+        type: 'list',
+        name: 'buildTool',
+        message: 'Build tool',
+        choices: [{
+          name: 'Maven',
+          value: 'maven'
+        },{
+          name: 'Gradle',
+          value: 'gradle'
+        }],
+        default: 'maven'
       }
     ];
     inquirer.prompt(questions, function( answers ) {
-      console.log(answers.name);
+      if(answers.buildTool == 'maven') {
+        gfile.copy(
+          path.join(__dirname,'../model/config.@maven.yml'),
+          path.join(process.cwd(),'model/config.@maven.yml'));
+      }
     });
   }
 };
