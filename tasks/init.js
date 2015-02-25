@@ -10,7 +10,7 @@ module.exports = {
       {
         type: 'list',
         name: 'buildTool',
-        message: 'Build tool',
+        message: 'Which build tool ?',
         choices: [{
           name: 'Maven',
           value: 'maven'
