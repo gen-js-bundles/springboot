@@ -6,7 +6,7 @@ var
   yaml = require('js-yaml');
 
 module.exports = {
-  askFor: function() {
+  askFor: function(callback) {
 
     var dependenciesChoices = [
       {
@@ -231,6 +231,9 @@ module.exports = {
 
       gfile.writeYaml(path.join(process.cwd(),'model','config.@'+answers.buildTool+'.yml'), data);
 
+      if(callback) {
+        callback();
+      }
     });
   }
 };
