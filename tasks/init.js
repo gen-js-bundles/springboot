@@ -7,6 +7,134 @@ var
 
 module.exports = {
   askFor: function() {
+
+    var dependenciesChoices = [
+      {
+        name: "jdbc",
+        value: "jdbc"
+      },
+      {
+        name: "jpa",
+        value: "jpa"
+      },
+      {
+        name: "mongodb",
+        value: "mongodb"
+      },
+      {
+        name: "redis",
+        value: "redis"
+      },
+      {
+        name: "gemfire",
+        value: "gemfire"
+      },
+      {
+        name: "solr",
+        value: "solr"
+      },
+      {
+        name: "elasticsearch",
+        value: "elasticsearch"
+      },
+      {
+        name: "websocket",
+        value: "websocket"
+      },
+      {
+        name: "ws",
+        value: "ws"
+      },
+      {
+        name: "jersey",
+        value: "jersey"
+      },
+      {
+        name: "rest",
+        value: "rest"
+      },
+      {
+        name: "mobile",
+        value: "mobile"
+      },
+      {
+        name: "security",
+        value: "security"
+      },
+      {
+        name: "aop",
+        value: "aop"
+      },
+      {
+        name: "jta-atomikos",
+        value: "jta-atomikos"
+      },
+      {
+        name: "jta-bitronix",
+        value: "jta-bitronix"
+      },
+      {
+        name: "batch",
+        value: "batch"
+      },
+      {
+        name: "integration",
+        value: "integration"
+      },
+      {
+        name: "hornetq",
+        value: "hornetq"
+      },
+      {
+        name: "amqp",
+        value: "amqp"
+      },
+      {
+        name: "mail",
+        value: "mail"
+      },
+      {
+        name: "freemarker",
+        value: "freemarker"
+      },
+      {
+        name: "velocity",
+        value: "velocity"
+      },
+      {
+        name: "groovy-templates",
+        value: "groovy-templates"
+      },
+      {
+        name: "thymeleaf",
+        value: "thymeleaf"
+      },
+      {
+        name: "social-facebook",
+        value: "social-facebook"
+      },
+      {
+        name: "social-linkedin",
+        value: "social-linkedin"
+      },
+      {
+        name: "social-twitter",
+        value: "social-twitter"
+      },
+      {
+        name: "actuator",
+        value: "actuator"
+      },
+      {
+        name: "cloud-connectors",
+        value: "cloud-connectors"
+      },
+      {
+        name: "remote-shell",
+        value: "remote-shell"
+      }
+    ];
+
     var questions = [
       {
         type: 'list',
@@ -20,9 +148,16 @@ module.exports = {
           value: 'gradle'
         }],
         default: 'maven'
+      },
+      {
+        type: 'checkbox',
+        name: 'dependenciesSelected',
+        message: 'Which dependencies ?',
+        choices: dependenciesChoices
       }
     ];
     inquirer.prompt(questions, function( answers ) {
+      /*
       if(answers.buildTool == 'maven') {
         gfile.copy(
           path.join(__dirname,'../model/config.@maven.yml'),
@@ -33,6 +168,7 @@ module.exports = {
           path.join(__dirname,'../model/config.@gradle.yml'),
           path.join(process.cwd(),'model/config.@gradle.yml'));
       }
+      */
 
       var data = gfile.loadYaml(path.join(process.cwd(),'Genjsfile.yml'));
 
@@ -76,6 +212,24 @@ module.exports = {
       }
 
       gfile.writeYaml(path.join(process.cwd(),'Genjsfile.yml'), data);
+
+      var dependencies = [];
+      for(var i = 0; i<dependenciesChoices.length; i++) {
+        var isSelected = false;
+        for (var j = 0; j < answers.dependenciesSelected.length && !isSelected; j++) {
+          if(answers.dependenciesSelected[j] == dependenciesChoices[i].value) {
+            isSelected = true;
+          }
+        }
+        var dependency = {};
+        dependency[dependenciesChoices[i].value] = isSelected;
+        dependencies.push(dependency);
+      }
+      var data = {
+        dependencies: dependencies
+      };
+
+      gfile.writeYaml(path.join(process.cwd(),'model','config.@'+answers.buildTool+'.yml'), data);
 
     });
   }
