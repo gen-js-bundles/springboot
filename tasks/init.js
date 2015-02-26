@@ -15,11 +15,11 @@ module.exports = {
       },
       {
         name: "jpa",
-        value: "jpa"
+        value: "data-jpa"
       },
       {
         name: "mongodb",
-        value: "mongodb"
+        value: "data-mongodb"
       },
       {
         name: "redis",
