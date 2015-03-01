@@ -10,75 +10,75 @@ module.exports = {
 
     var dependenciesChoices = [
       {
-        name: "jdbc",
+        name: "Data - JDBC",
         value: "jdbc"
       },
       {
-        name: "jpa",
+        name: "Data - JPA",
         value: "data-jpa"
       },
       {
-        name: "mongodb",
+        name: "Data - MongoDB",
         value: "data-mongodb"
       },
       {
-        name: "redis",
+        name: "Data - Redis",
         value: "redis"
       },
       {
-        name: "gemfire",
+        name: "Data - Gemfire",
         value: "gemfire"
       },
       {
-        name: "solr",
+        name: "Data - Solr",
         value: "solr"
       },
       {
-        name: "elasticsearch",
+        name: "Data - Elasticsearch",
         value: "elasticsearch"
       },
       {
-        name: "websocket",
+        name: "Web - Websocket",
         value: "websocket"
       },
       {
-        name: "ws",
+        name: "Web - WS",
         value: "ws"
       },
       {
-        name: "jersey",
+        name: "Web - Jersey (JAX-RS)",
         value: "jersey"
       },
       {
-        name: "rest",
+        name: "Web - Rest Repositories",
         value: "rest"
       },
       {
-        name: "mobile",
+        name: "Web - Mobile",
         value: "mobile"
       },
       {
-        name: "security",
+        name: "Web - Security",
         value: "security"
       },
       {
-        name: "aop",
+        name: "Core - AOP",
         value: "aop"
       },
       {
-        name: "jta-atomikos",
+        name: "Core - Atomikos (JTA)",
         value: "jta-atomikos"
       },
       {
-        name: "jta-bitronix",
+        name: "Core - Bitronix (JTA)",
         value: "jta-bitronix"
       },
       {
-        name: "batch",
+        name: "I/O - Batch",
         value: "batch"
       },
       {
-        name: "integration",
+        name: "iI/O - Integration",
         value: "integration"
       },
       {
@@ -94,7 +94,7 @@ module.exports = {
         value: "mail"
       },
       {
-        name: "freemarker",
+        name: "Web - Freemarker",
         value: "freemarker"
       },
       {
