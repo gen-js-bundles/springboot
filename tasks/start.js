@@ -1,7 +1,8 @@
 var
   inquirer = require("inquirer"),
   fs = require('fs'),
-  path = require('path');
+  path = require('path'),
+  exec = require('child_process').exec;
 
 module.exports = {
   do: function(data, callback) {
@@ -18,8 +19,12 @@ module.exports = {
 
       if(answers.start) {
         console.log('start');
-        console.log(data);
-        console.log(data.Genjsfile);
+        // console.log(data);
+        // console.log(data.Genjsfile);
+        var outPath = path.join(process.cwd(),data.Genjsfile.config.outDir);
+        var command = 'mvn spring-boot:run';
+        console.log('=>',command,' in ',outPath);
+        exec(command, {cwd: outPath);
       }
 
     });
