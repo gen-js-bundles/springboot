@@ -4,7 +4,7 @@ var
   path = require('path'),
   gfile = require('gfilesync'),
   yaml = require('js-yaml');
-a
+
 module.exports = {
   do: function(data, callback) {
 
