@@ -5,10 +5,10 @@ var
 
 module.exports = (function Task() {
   function Task() {
-    var $this = this;
   }
   Task.prototype.do = function(callback) {
-
+    var $this = this;
+    
     // Start
     var questions = [
       {
