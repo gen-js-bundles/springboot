@@ -19,6 +19,7 @@ module.exports = {
 
       if(answers.start) {
         console.log('start');
+        console.log(this.Genjsfile.config.outDir);
       }
 
     });
