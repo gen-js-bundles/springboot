@@ -4,6 +4,8 @@ var
   path = require('path');
 
 module.exports = {
+  var $this = this;
+  
   do: function(callback) {
 
     // Start
@@ -19,7 +21,7 @@ module.exports = {
 
       if(answers.start) {
         console.log('start');
-        console.log(this.Genjsfile.config.outDir);
+        console.log($this.Genjsfile.config.outDir);
       }
 
     });
