@@ -5,7 +5,7 @@ var
 
 module.exports = (function Task() {
   function Task() {
-    $this: this;
+    var $this = this;
   }
   Task.prototype.do = function(callback) {
 
@@ -22,7 +22,8 @@ module.exports = (function Task() {
 
       if(answers.start) {
         console.log('start');
-        console.log(this.Genjsfile.config.outDir);
+        console.log($this);
+        console.log($this.Genjsfile);
       }
 
     });
