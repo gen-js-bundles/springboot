@@ -78,59 +78,63 @@ module.exports = {
         value: "batch"
       },
       {
-        name: "iI/O - Integration",
+        name: "I/O - Integration",
         value: "integration"
       },
       {
-        name: "hornetq",
+        name: "I/O - JMS - Hornetq",
         value: "hornetq"
       },
       {
-        name: "amqp",
+        name: "I/O - AMQP",
         value: "amqp"
       },
       {
-        name: "mail",
+        name: "I/O - Mail",
         value: "mail"
       },
       {
-        name: "Web - Freemarker",
+        name: "Template Engines - Freemarker",
         value: "freemarker"
       },
       {
-        name: "velocity",
+        name: "Template Engines - Velocity",
         value: "velocity"
       },
       {
-        name: "groovy-templates",
+        name: "Template Engines - Groovy Templates",
         value: "groovy-templates"
       },
       {
-        name: "thymeleaf",
+        name: "Template Engines - Thymeleaf",
         value: "thymeleaf"
       },
       {
-        name: "social-facebook",
+        name: "Template Engines - Mustache",
+        value: "mustache"
+      },
+      {
+        name: "Social - Facebook",
         value: "social-facebook"
       },
       {
-        name: "social-linkedin",
+        name: "Social - Linkedin",
         value: "social-linkedin"
       },
       {
-        name: "social-twitter",
+        name: "Social - Twitter",
         value: "social-twitter"
       },
       {
-        name: "actuator",
+        name: "Ops - Actuator",
         value: "actuator"
       },
       {
-        name: "cloud-connectors",
+        name: "Ops - Cloud Connectors",
         value: "cloud-connectors"
       },
       {
-        name: "remote-shell",
+        name: "Ops - Remote Shell",
         value: "remote-shell"
       }
     ];
