@@ -7,7 +7,8 @@ genjs start springboot
 # New project
 
 ```
-mkdir app & cd app
+mkdir app
+cd app
 
 genjs start springboot
 
