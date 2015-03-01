@@ -9,7 +9,7 @@ module.exports = {
     // Start
     var questions = [
       {
-        type: 'input',
+        type: 'confirm',
         name: 'start',
         message: 'Start the application ?',
         default: true
