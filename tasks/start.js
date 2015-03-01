@@ -24,9 +24,9 @@ module.exports = {
         var outPath = path.join(process.cwd(),data.Genjsfile.config.outDir);
         var command = 'mvn spring-boot:run';
         console.log('=>',command,' in ',outPath);
-        exec(command, {cwd: outPath})
-          .stdout.pipe(process.stdout)
-          .stderr.pipe(process.stderr);
+        var child = exec(command, {cwd: outPath});
+        child.stdout.pipe(process.stdout);
+        child.stderr.pipe(process.stderr);
       }
 
     });
