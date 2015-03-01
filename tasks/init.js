@@ -4,138 +4,241 @@ var
   path = require('path'),
   gfile = require('gfilesync'),
   yaml = require('js-yaml');
-
+a
 module.exports = {
   do: function(data, callback) {
 
     var dependenciesChoices = [
       {
         name: "Data - JDBC",
-        value: "jdbc"
+        value: {
+          groupId: "org.springframework.boot",
+          artifactId: "spring-boot-starter-jdbc"
+        }
       },
       {
         name: "Data - JPA",
-        value: "data-jpa"
+        value: {
+         groupId: "org.springframework.boot",
+         artifactId: "spring-boot-starter-jpa"
+       }
       },
       {
         name: "Data - MongoDB",
-        value: "data-mongodb"
+        value: {
+          groupId: "org.springframework.boot",
+          artifactId: "spring-boot-starter-mongodb"
+        }
       },
       {
         name: "Data - Redis",
-        value: "redis"
+        value: {
+          groupId: "org.springframework.boot",
+          artifactId: "spring-boot-starter-redis"
+        }
       },
       {
         name: "Data - Gemfire",
-        value: "gemfire"
+        value: {
+          groupId: "org.springframework.boot",
+          artifactId: "spring-boot-starter-gemfire"
+        }
       },
       {
         name: "Data - Solr",
-        value: "solr"
+        value: {
+          groupId: "org.springframework.boot",
+          artifactId: "spring-boot-starter-solr"
+        }
       },
       {
         name: "Data - Elasticsearch",
-        value: "elasticsearch"
+        value: {
+          groupId: "org.springframework.boot",
+          artifactId: "spring-boot-starter-elasticsearch"
+        }
+      },
+      {
+        name: "Web - Web",
+        value: {
+          groupId: "org.springframework.boot",
+          artifactId: "spring-boot-starter-web"
+        }
       },
       {
         name: "Web - Websocket",
-        value: "websocket"
+        value: {
+          groupId: "org.springframework.boot",
+          artifactId: "spring-boot-starter-websocket"
+        }
       },
       {
         name: "Web - WS",
-        value: "ws"
+        value: {
+          groupId: "org.springframework.boot",
+          artifactId: "spring-boot-starter-ws"
+        }
       },
       {
         name: "Web - Jersey (JAX-RS)",
-        value: "jersey"
+        value: {
+          groupId: "org.springframework.boot",
+          artifactId: "spring-boot-starter-jersey"
+        }
       },
       {
         name: "Web - Rest Repositories",
-        value: "rest"
+        value: {
+          groupId: "org.springframework.boot",
+          artifactId: "spring-boot-starter-rest"
+        }
       },
       {
         name: "Web - Mobile",
-        value: "mobile"
+        value: {
+          groupId: "org.springframework.boot",
+          artifactId: "spring-boot-starter-mobile"
+        }
       },
       {
         name: "Web - Security",
-        value: "security"
+        value: {
+          groupId: "org.springframework.boot",
+          artifactId: "spring-boot-starter-security"
+        }
       },
       {
         name: "Core - AOP",
-        value: "aop"
+        value: {
+          groupId: "org.springframework.boot",
+          artifactId: "spring-boot-starter-aop"
+        }
       },
       {
         name: "Core - Atomikos (JTA)",
-        value: "jta-atomikos"
+        value: {
+          groupId: "org.springframework.boot",
+          artifactId: "spring-boot-starter-jta-atomikos"
+        }
       },
       {
         name: "Core - Bitronix (JTA)",
-        value: "jta-bitronix"
+        value: {
+          groupId: "org.springframework.boot",
+          artifactId: "spring-boot-starter-jta-bitronix"
+        }
       },
       {
         name: "I/O - Batch",
-        value: "batch"
+        value: {
+          groupId: "org.springframework.boot",
+          artifactId: "spring-boot-starter-batch"
+        }
       },
       {
         name: "I/O - Integration",
-        value: "integration"
+        value: {
+          groupId: "org.springframework.boot",
+          artifactId: "spring-boot-starter-integration"
+        }
       },
       {
         name: "I/O - JMS - Hornetq",
-        value: "hornetq"
+        value: {
+          groupId: "org.springframework.boot",
+          artifactId: "spring-boot-starter-hornetq"
+        }
       },
       {
         name: "I/O - AMQP",
-        value: "amqp"
+        value: {
+          groupId: "org.springframework.boot",
+          artifactId: "spring-boot-starter-amqp"
+        }
       },
       {
         name: "I/O - Mail",
-        value: "mail"
+        value: {
+          groupId: "org.springframework.boot",
+          artifactId: "spring-boot-starter-mail"
+        }
       },
       {
         name: "Template Engines - Freemarker",
-        value: "freemarker"
+        value: {
+          groupId: "org.springframework.boot",
+          artifactId: "spring-boot-starter-freemarker"
+        }
       },
       {
         name: "Template Engines - Velocity",
-        value: "velocity"
+        value: {
+          groupId: "org.springframework.boot",
+          artifactId: "spring-boot-starter-velocity"
+        }
       },
       {
         name: "Template Engines - Groovy Templates",
-        value: "groovy-templates"
+        value: {
+          groupId: "org.springframework.boot",
+          artifactId: "spring-boot-starter-groovy-templates"
+        }
       },
       {
         name: "Template Engines - Thymeleaf",
-        value: "thymeleaf"
+        value: {
+          groupId: "org.springframework.boot",
+          artifactId: "spring-boot-starter-thymeleaf"
+        }
       },
       {
         name: "Template Engines - Mustache",
-        value: "mustache"
+        value: {
+          groupId: "org.springframework.boot",
+          artifactId: "spring-boot-starter-mustache"
+        }
       },
       {
         name: "Social - Facebook",
-        value: "social-facebook"
+        value: {
+          groupId: "org.springframework.boot",
+          artifactId: "spring-boot-starter-social-facebook"
+        }
       },
       {
         name: "Social - Linkedin",
-        value: "social-linkedin"
+        value: {
+          groupId: "org.springframework.boot",
+          artifactId: "spring-boot-starter-social-linkedin"
+        }
       },
       {
         name: "Social - Twitter",
-        value: "social-twitter"
+        value: {
+          groupId: "org.springframework.boot",
+          artifactId: "spring-boot-starter-social-twitter"
+        }
       },
       {
         name: "Ops - Actuator",
-        value: "actuator"
+        value: {
+          groupId: "org.springframework.boot",
+          artifactId: "spring-boot-starter-actuator"
+        }
       },
       {
         name: "Ops - Cloud Connectors",
-        value: "cloud-connectors"
+        value: {
+          groupId: "org.springframework.boot",
+          artifactId: "spring-boot-starter-cloud-connectors"
+        }
       },
       {
         name: "Ops - Remote Shell",
-        value: "remote-shell"
+        value: {
+          groupId: "org.springframework.boot",
+          artifactId: "spring-boot-starter-remote-shell"
+        }
       }
     ];
 
