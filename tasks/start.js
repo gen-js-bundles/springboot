@@ -4,7 +4,7 @@ var
   path = require('path');
 
 module.exports = {
-  var $this = this;
+  $this: this,
   
   do: function(callback) {
 
