@@ -6,7 +6,7 @@ var
   yaml = require('js-yaml');
 
 module.exports = {
-  do: function(callback) {
+  do: function(data, callback) {
 
     var dependenciesChoices = [
       {
