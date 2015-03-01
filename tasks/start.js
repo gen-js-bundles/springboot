@@ -3,12 +3,8 @@ var
   fs = require('fs'),
   path = require('path');
 
-module.exports = (function Task() {
-  function Task() {
-  }
-  Task.prototype.do = function(callback) {
-    var $this = this;
-    
+module.exports = {
+  do: function(data, callback) {
     // Start
     var questions = [
       {
@@ -22,11 +18,10 @@ module.exports = (function Task() {
 
       if(answers.start) {
         console.log('start');
-        console.log($this);
-        console.log($this.Genjsfile);
+        console.log(data);
+        console.log(data.Genjsfile);
       }
 
     });
-  };
-  return Task;
-})();
+  })
+};
