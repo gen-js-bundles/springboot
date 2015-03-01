@@ -19,19 +19,14 @@ module.exports = {
 
       if(answers.start) {
         console.log('start');
-        
-        function exec(command,dir) {
-          console.log('=>',command,' in ',dir);
-          var child = exec(command, {cwd: dir});
-          child.stdout.pipe(process.stdout);
-          child.stderr.pipe(process.stderr);
-        }
-        
-        
-        var dir = path.join(process.cwd(), data.Genjsfile.config.outDir);
+        // console.log(data);
+        // console.log(data.Genjsfile);
+        var outPath = path.join(process.cwd(),data.Genjsfile.config.outDir);
         var command = 'mvn spring-boot:run';
-        
-        exec(command, dir);
+        console.log('=>',command,' in ',outPath);
+        var child = exec(command, {cwd: outPath});
+        child.stdout.pipe(process.stdout);
+        child.stderr.pipe(process.stderr);
       }
 
     });
