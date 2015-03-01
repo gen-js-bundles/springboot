@@ -41,8 +41,14 @@
             if(dependency === true) {
         %>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-<%=dependencyName%></artifactId>
+			<groupId><%= dependency.groupId %></groupId>
+			<artifactId><%= dependency.artifactId %></artifactId>
+			<% if(dependency.version != null) { %>
+			<version><%= dependency.version %></version>
+			<% } %>
+			<% if(dependency.scope != null) { %>
+			<scope><%= dependency.scope %></scope>
+			<% } %>
 		</dependency>
         <%
             }
