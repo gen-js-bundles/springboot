@@ -25,8 +25,8 @@ module.exports = {
         var command = 'mvn spring-boot:run';
         console.log('=>',command,' in ',outPath);
         exec(command, {cwd: outPath})
-          .stdout.pipe(process.stdout);
-          .stderr.pipe(process.stderr);;
+          .stdout.pipe(process.stdout)
+          .stderr.pipe(process.stderr);
       }
 
     });
