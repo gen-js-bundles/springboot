@@ -75,25 +75,25 @@ module.exports = {
       },
       {
         name: "Database Driver - H2",
-			  value: {
-			    groupId: "com.h2database",
-			    artifactId: "h2"
-			  }
+        value: {
+          groupId: "com.h2database",
+          artifactId: "h2"
+        }
       },
-		  {
-			  name: "Database Driver - HSQLDB",
-			  value: {
-			    groupId: "org.hsqldb",
-			    artifactId: "hsqldb"
-			  }
-		  },
-		  {
-			  name: "Database Driver - MySQL",
-			  value: {
-			    groupId: "mysql",
-			    artifactId: "mysql-connector-java"
-			  }
-		  },
+      {
+        name: "Database Driver - HSQLDB",
+        value: {
+          groupId: "org.hsqldb",
+          artifactId: "hsqldb"
+        }
+      },
+      {
+        name: "Database Driver - MySQL",
+        value: {
+          groupId: "mysql",
+          artifactId: "mysql-connector-java"
+        }
+      },
       {
         name: "Web - Web",
         value: {
