@@ -68,10 +68,10 @@ module.exports = {
       },
       {
         name: "Database Driver - Derby",
-		    value: {
-		      groupId: "org.apache.derby",
-			    artifactId: "derby"
-		    }
+        value: {
+          groupId: "org.apache.derby",
+          artifactId: "derby"
+        }
       },
       {
         name: "Database Driver - H2",
