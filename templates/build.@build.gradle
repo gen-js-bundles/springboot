@@ -1,4 +1,4 @@
-<% if(global.build.tool == 'gradle') { %>
+<% if(build.tool == 'gradle') { %>
 
 buildscript {
     ext {
@@ -31,7 +31,7 @@ repositories {
 
 dependencies {
 <%
-  var dependencies = all.config.tags.gradle.dependencies;
+  var dependencies = all.config.tags.build.dependencies;
   each(dependencies, function(dependency) {
     var dependencyDeclaration =
       dependency.groupId
