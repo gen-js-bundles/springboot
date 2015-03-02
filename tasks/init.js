@@ -20,14 +20,14 @@ module.exports = {
         name: "Data - JPA",
         value: {
          groupId: "org.springframework.boot",
-         artifactId: "spring-boot-starter-jpa"
+         artifactId: "spring-boot-starter-data-jpa"
        }
       },
       {
         name: "Data - MongoDB",
         value: {
           groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-mongodb"
+          artifactId: "spring-boot-starter-data-mongodb"
         }
       },
       {
