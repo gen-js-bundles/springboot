@@ -29,13 +29,24 @@ repositories {
 
 dependencies {
 <%
-  var dependencies = all.config.tags.gradle.dependencies;
-  each(dependencies, function(dependencies2) {
-   each(dependencies2, function(dependency, dependencyName) {
-    if(dependency === true) {
+  var dependencies = all.config.tags.maven.dependencies;
+  each(dependencies, function(dependency) {
+    if(dependency.scope == null || if(dependency.scope == 'compile') {
+        var dependencyDeclaration =
+          dependency.groupId
+          + ":"
+          + dependency.artifactId;
+        if(dependency.version != null) {
+          dependencyDeclaration += 
+            ":"
+            + dependency.version;
+        }
 %>
-    compile("org.springframework.boot:spring-boot-starter-<%=dependencyName%>")
+    compile("<%=dependencyDeclaration%>")
 <%
+    }
+  })
+%>
     }
    })
   })
