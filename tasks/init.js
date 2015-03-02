@@ -326,7 +326,7 @@ module.exports = {
       gfile.writeYaml(path.join(process.cwd(),'Genjsfile.yml'), data);
 
       var data = {
-        dependencies: dependenciesSelected
+        dependencies: answers.dependenciesSelected
       };
 
       gfile.writeYaml(path.join(process.cwd(),'model','config.@'+answers.buildTool+'.yml'), data);
