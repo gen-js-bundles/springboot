@@ -34,7 +34,7 @@ module.exports = {
         name: "Data - Redis",
         value: {
           groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-data-redis"
+          artifactId: "spring-boot-starter-redis"
         }
       },
       {
@@ -90,7 +90,7 @@ module.exports = {
         name: "Web - Rest Repositories",
         value: {
           groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-rest"
+          artifactId: "spring-boot-starter-data-rest"
         }
       },
       {
