@@ -34,28 +34,28 @@ module.exports = {
         name: "Data - Redis",
         value: {
           groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-redis"
+          artifactId: "spring-boot-starter-data-redis"
         }
       },
       {
         name: "Data - Gemfire",
         value: {
           groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-gemfire"
+          artifactId: "spring-boot-starter-data-gemfire"
         }
       },
       {
         name: "Data - Solr",
         value: {
           groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-solr"
+          artifactId: "spring-boot-starter-data-solr"
         }
       },
       {
         name: "Data - Elasticsearch",
         value: {
           groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-elasticsearch"
+          artifactId: "spring-boot-starter-data-elasticsearch"
         }
       },
       {
