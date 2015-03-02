@@ -363,7 +363,7 @@ module.exports = {
         dependencies: answers.dependenciesSelected
       };
 
-      gfile.writeYaml(path.join(process.cwd(),'model','config.@'+answers.buildTool+'.yml'), data);
+      gfile.writeYaml(path.join(process.cwd(),'model','config.@build.yml'), data);
 
       if(callback) {
         callback();
