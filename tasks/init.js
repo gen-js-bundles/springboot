@@ -317,23 +317,16 @@ module.exports = {
       if(data.global.version.java == null) {
         data.global.version.java = '1.8';
       }
+      
+      if(data.global.build == null) {
+        data.global.build = {};
+      }
+      data.global.build.tool = answers.buildTool;
 
       gfile.writeYaml(path.join(process.cwd(),'Genjsfile.yml'), data);
 
-      var dependencies = [];
-      for(var i = 0; i<dependenciesChoices.length; i++) {
-        var isSelected = false;
-        for (var j = 0; j < answers.dependenciesSelected.length && !isSelected; j++) {
-          if(answers.dependenciesSelected[j] == dependenciesChoices[i].value) {
-            isSelected = true;
-          }
-        }
-        var dependency = {};
-        dependency[dependenciesChoices[i].value] = isSelected;
-        dependencies.push(dependency);
-      }
       var data = {
-        dependencies: dependencies
+        dependencies: dependenciesSelected
       };
 
       gfile.writeYaml(path.join(process.cwd(),'model','config.@'+answers.buildTool+'.yml'), data);
