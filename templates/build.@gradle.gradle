@@ -40,18 +40,19 @@ dependencies {
         ":"
         + dependency.version;
     }
-    if(dependency.scope == null || if(dependency.scope == 'compile') {
+    if(dependency.scope == null || dependency.scope == 'compile') {
 %>
     compile("<%=dependencyDeclaration%>")
 <%
     }
     if(dependency.scope == 'test') {
 %>
-    testCompile("org.springframework.boot:spring-boot-starter-test")
+    testCompile("<%=dependencyDeclaration%>")
 <%
     }
   })
 %>
+    testCompile("org.springframework.boot:spring-boot-starter-test")
 }
 
 eclipse {
