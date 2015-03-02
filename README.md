@@ -1,18 +1,8 @@
 # SpringBoot
 
+## New project
+
+* In an empty folder, execute this command :
 ```
 genjs start springboot
-```
-
-# New project
-
-```
-mkdir app
-cd app
-
-genjs start springboot
-
-cd out
-
-mvn spring-boot:run
 ```
