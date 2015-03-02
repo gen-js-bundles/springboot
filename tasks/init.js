@@ -9,13 +9,13 @@ module.exports = {
   do: function(data, callback) {
 
     var dependenciesChoices = [
-    	{
+      {
         name: "Test - Spring Boot Test",
-	      value: {
-	        groupId: "org.springframework.boot",
-		      artifactId: "spring-boot-starter-test",
-		      scope: "test"
-		    }
+	value: {
+          groupId: "org.springframework.boot",
+          artifactId: "spring-boot-starter-test",
+          scope: "test"
+        }
       },
       {
         name: "Spring Data - JDBC",
