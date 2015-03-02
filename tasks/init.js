@@ -9,55 +9,91 @@ module.exports = {
   do: function(data, callback) {
 
     var dependenciesChoices = [
+		  {
+		    name: "Test - Spring Boot Test",
+		    value: {
+		      groupId: "org.springframework.boot",
+			    artifactId: "spring-boot-starter-test",
+			    scope: "test"
+		    }
+      },
       {
-        name: "Data - JDBC",
+        name: "Spring Data - JDBC",
         value: {
           groupId: "org.springframework.boot",
           artifactId: "spring-boot-starter-jdbc"
         }
       },
       {
-        name: "Data - JPA",
+        name: "Spring Data - JPA",
         value: {
          groupId: "org.springframework.boot",
          artifactId: "spring-boot-starter-data-jpa"
        }
       },
       {
-        name: "Data - MongoDB",
+        name: "Spring Data - MongoDB",
         value: {
           groupId: "org.springframework.boot",
           artifactId: "spring-boot-starter-data-mongodb"
         }
       },
       {
-        name: "Data - Redis",
+        name: "Spring Data - Redis",
         value: {
           groupId: "org.springframework.boot",
           artifactId: "spring-boot-starter-redis"
         }
       },
       {
-        name: "Data - Gemfire",
+        name: "Spring Data - Gemfire",
         value: {
           groupId: "org.springframework.boot",
           artifactId: "spring-boot-starter-data-gemfire"
         }
       },
       {
-        name: "Data - Solr",
+        name: "Spring Data - Solr",
         value: {
           groupId: "org.springframework.boot",
           artifactId: "spring-boot-starter-data-solr"
         }
       },
       {
-        name: "Data - Elasticsearch",
+        name: "Spring Data - Elasticsearch",
         value: {
           groupId: "org.springframework.boot",
           artifactId: "spring-boot-starter-data-elasticsearch"
         }
       },
+      {
+        name: "Database Driver - Derby",
+		    value: {
+		      groupId: "org.apache.derby",
+			    artifactId: "derby"
+		    }
+      },
+      {
+        name: "Database Driver - H2",
+			  value: {
+			    groupId: "com.h2database",
+			    artifactId: "h2"
+			  }
+      },
+		  {
+			  name: "Database Driver - HSQLDB",
+			  value: {
+			    groupId: "org.hsqldb",
+			    artifactId: "hsqldb"
+			  }
+		  },
+		  {
+			  name: "Database Driver - MySQL",
+			  value: {
+			    groupId: "mysql",
+			    artifactId: "mysql-connector-java"
+			  }
+		  },
       {
         name: "Web - Web",
         value: {
@@ -73,7 +109,7 @@ module.exports = {
         }
       },
       {
-        name: "Web - WS",
+        name: "Web - WS (WebServices)",
         value: {
           groupId: "org.springframework.boot",
           artifactId: "spring-boot-starter-ws"
