@@ -1,4 +1,4 @@
-<% if(global.build.tool == 'maven') { %>
+<% if(build.tool == 'maven') { %>
 
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -37,7 +37,7 @@
 			<scope>test</scope>
 		</dependency>
         <%
-          var dependencies = all.config.tags.maven.dependencies;
+          var dependencies = all.config.tags.build.dependencies;
           each(dependencies, function(dependency) {
         %>
 		<dependency>
