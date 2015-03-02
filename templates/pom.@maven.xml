@@ -36,9 +36,7 @@
 		</dependency>
         <%
           var dependencies = all.config.tags.maven.dependencies;
-          each(dependencies, function(dependencies2) {
-           each(dependencies2, function(dependency, dependencyName) {
-            if(dependency === true) {
+          each(dependency, function(dependencies) {
         %>
 		<dependency>
 			<groupId><%= dependency.groupId %></groupId>
@@ -51,8 +49,6 @@
 			<% } %>
 		</dependency>
         <%
-            }
-           })
           })
         %>
     </dependencies>
