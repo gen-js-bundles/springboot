@@ -311,9 +311,7 @@ module.exports = {
       if(data.global.version == null) {
         data.global.version = {};
       }
-      if(data.global.version.springboot == null) {
-        data.global.version.springboot = '1.2.2';
-      }
+      data.global.version.springboot = '1.2.2';
       if(data.global.version.java == null) {
         data.global.version.java = '1.8';
       }
