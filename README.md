@@ -1,6 +1,6 @@
 # SpringBoot
 
-## New project
+## New SpringBoot project
 
 * In an empty folder, execute this command :
 ```
