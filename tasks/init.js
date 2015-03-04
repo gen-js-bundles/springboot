@@ -312,6 +312,19 @@ module.exports = {
         default: 'maven'
       },
       {
+        type: 'list',
+        name: 'packaging',
+        message: 'Which packaging ?',
+        choices: [{
+          name: 'Jar',
+          value: 'jar'
+        },{
+          name: 'War',
+          value: 'war'
+        }],
+        default: 'jar'
+      },
+      {
         type: 'checkbox',
         name: 'dependenciesSelected',
         message: 'Which dependencies ?',
@@ -360,7 +373,7 @@ module.exports = {
         data.global.maven.artifactId = 'myapp';
       }
       if(data.global.maven.packaging == null) {
-        data.global.maven.packaging = 'war'
+        data.global.maven.packaging = answers.packaging;
       }
 
       if(data.global.version == null) {
