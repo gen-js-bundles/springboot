@@ -281,6 +281,25 @@ module.exports = {
     var questions = [
       {
         type: 'list',
+        name: 'javaVersion',
+        message: 'Which Java version ?',
+        choices: [{
+          name: '1.8',
+          value: '1.8'
+        },{
+          name: '1.7',
+          value: '1.7'
+        },{
+          name: '1.6',
+          value: '1.6'
+        },{
+          name: '1.5',
+          value: '1.5'
+        }],
+        default: '1.8'
+      },
+      {
+        type: 'list',
         name: 'buildTool',
         message: 'Which build tool ?',
         choices: [{
@@ -349,7 +368,7 @@ module.exports = {
       }
       data.global.version.springboot = '1.2.2';
       if(data.global.version.java == null) {
-        data.global.version.java = '1.8';
+        data.global.version.java = answers.javaVersion;
       }
       
       if(data.global.build == null) {
