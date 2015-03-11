@@ -31,7 +31,7 @@ module.exports = {
           artifactId: "spring-cloud-starter-eureka-server"
         }
       },
-s      {
+      {
         name: "Spring Data - JDBC",
         value: {
           groupId: "org.springframework.boot",
