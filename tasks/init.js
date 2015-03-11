@@ -29,7 +29,7 @@ module.exports = {
         value: {
           groupId: "org.springframework.cloud",
           artifactId: "spring-cloud-starter-eureka-server",
-          cloud: true
+          isSpringCloud: true
         }
       },
       {
