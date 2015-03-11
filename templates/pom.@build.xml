@@ -12,10 +12,16 @@
 	<description><%= project.description %></description>
 
 	<parent>
+<% if(version.springcloud == null) { %>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version><%= version.springboot %>.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
+<% } else { %>
+		<groupId>org.springframework.cloud</groupId>
+		<artifactId>spring-cloud-starter-parent</artifactId>
+		<version><%= version.springcloud %></version>
+<% } %>
 	</parent>
 
 	<properties>
