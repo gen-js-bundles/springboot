@@ -28,7 +28,8 @@ module.exports = {
         name: "Spring Cloud - Eureka",
         value: {
           groupId: "org.springframework.cloud",
-          artifactId: "spring-cloud-starter-eureka-server"
+          artifactId: "spring-cloud-starter-eureka-server",
+          cloud: true
         }
       },
       {
@@ -389,6 +390,17 @@ module.exports = {
       data.global.version.springboot = '1.2.2';
       if(data.global.version.java == null) {
         data.global.version.java = answers.javaVersion;
+      }
+      
+      var isSpringCloud = false;
+      for(var i=0; i<answers.dependenciesSelected.length; i++) {
+      	var dependency = answers.dependenciesSelected[i];
+      	if(dependency.isSpringCloud) {
+      	  isSpringCloud = true
+      	}
+      }
+      if(isSpringCloud) {
+        data.global.version.springcloud = '1.0.0.RELEASE';
       }
       
       if(data.global.build == null) {
