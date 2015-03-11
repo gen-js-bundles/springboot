@@ -18,20 +18,6 @@ module.exports = {
         }
       },
       {
-        name: "Security",
-        value: {
-          groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-security"
-        }
-      },
-      {
-        name: "Spring Cloud - Eureka",
-        value: {
-          groupId: "org.springframework.cloud",
-          artifactId: "spring-cloud-starter-eureka-server"
-        }
-      },
-      {
         name: "Spring Data - JDBC",
         value: {
           groupId: "org.springframework.boot",
@@ -148,6 +134,13 @@ module.exports = {
         value: {
           groupId: "org.springframework.boot",
           artifactId: "spring-boot-starter-mobile"
+        }
+      },
+      {
+        name: "Web - Security",
+        value: {
+          groupId: "org.springframework.boot",
+          artifactId: "spring-boot-starter-security"
         }
       },
       {
