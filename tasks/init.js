@@ -28,7 +28,7 @@ module.exports = {
         name: "Spring Cloud - Eureka",
         value: {
           groupId: "org.springframework.cloud",
-          artifactId: "spring-cloud-eureka-client",
+          artifactId: "spring-cloud-starter-eureka-server",
           isSpringCloud: true
         }
       },
