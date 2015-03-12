@@ -41,6 +41,14 @@ module.exports = {
         }
       },
       {
+        name: "Spring Cloud - Config Client",
+        value: {
+          groupId: "org.springframework.cloud",
+          artifactId: "spring-cloud-config-server",
+          isSpringCloud: true
+        }
+      },
+      {
         name: "Spring Data - JDBC",
         value: {
           groupId: "org.springframework.boot",
