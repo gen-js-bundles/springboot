@@ -28,15 +28,7 @@ module.exports = {
         name: "Spring Cloud - Eureka",
         value: {
           groupId: "org.springframework.cloud",
-          artifactId: "spring-cloud-starter-eureka-server",
-          isSpringCloud: true
-        }
-      },
-      {
-        name: "Spring Cloud - Config Server",
-        value: {
-          groupId: "org.springframework.cloud",
-          artifactId: "spring-cloud-config-client",
+          artifactId: "spring-cloud-eureka-client",
           isSpringCloud: true
         }
       },
@@ -44,7 +36,7 @@ module.exports = {
         name: "Spring Cloud - Config Client",
         value: {
           groupId: "org.springframework.cloud",
-          artifactId: "spring-cloud-config-server",
+          artifactId: "spring-cloud-config-client",
           isSpringCloud: true
         }
       },
