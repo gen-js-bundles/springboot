@@ -8,6 +8,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 <% if(has(all.config.tags.build.dependencies, 'artifactId', 'spring-cloud-starter-eureka-server')) { %>
 @EnableEurekaClient
 <% } %>
+@EnableHystrix
 public class Application {
 
     public static void main(String[] args) {
