@@ -341,6 +341,12 @@ module.exports = {
         default: 'jar'
       },
       {
+      	type: 'input',
+      	name: 'serverPort',
+      	message: 'Which server port ?',
+      	default: '8080'
+      },
+      {
         type: 'checkbox',
         name: 'dependenciesSelected',
         message: 'Which dependencies ?',
@@ -415,6 +421,11 @@ module.exports = {
         data.global.build = {};
       }
       data.global.build.tool = answers.buildTool;
+
+      if(data.global.server == null) {
+      	data.global.server = {};
+      }
+      data.global.server.port = answers.serverPort;
 
       gfile.writeYaml(path.join(process.cwd(),'Genjsfile.yml'), data);
 
