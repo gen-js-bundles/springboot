@@ -1,6 +1,7 @@
 <% if(server != null && server.port != null) { %>
 server:
   port: <%= server.port %>
+
 <% } %>
 <%
   var security = entities.config.tags.security;
