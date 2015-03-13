@@ -33,7 +33,7 @@ module.exports = {
         }
       },
       {
-      	name: "Spring Cloud - Hystrix Command",
+      	name: "Spring Cloud - Hystrix",
         value: {
           groupId: "org.springframework.cloud",
           artifactId: "spring-cloud-starter-hystrix",
