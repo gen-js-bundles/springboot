@@ -272,7 +272,7 @@ module.exports = {
         }
       },
       {
-        name: "Ops - Actuator - Hystrix",
+        name: "Ops - Actuator - Hystrix Metrics Stream",
         value: {
           groupId: "org.springframework.boot",
           artifactId: "spring-boot-starter-actuator"
