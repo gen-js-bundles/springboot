@@ -39,7 +39,7 @@ module.exports = {
           artifactId: "spring-cloud-starter-hystrix",
           isSpringCloud: true
         }
-      }
+      },
       {
         name: "Spring Cloud - Config Client",
         value: {
