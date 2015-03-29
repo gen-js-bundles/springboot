@@ -1,3 +1,6 @@
 module.exports = {
-	templatesDirs: ["templates"]
+  templatesDirs: ["templates"],
+  dependencies: [
+    "domain"
+  ]
 };
