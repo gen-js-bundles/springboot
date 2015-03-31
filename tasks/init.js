@@ -11,293 +11,376 @@ module.exports = {
     var dependenciesChoices = [
       {
         name: "Test - Spring Boot Test",
-	value: {
-          groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-test",
-          scope: "test"
+        value: {
+          dependency: {
+            groupId: "org.springframework.boot",
+            artifactId: "spring-boot-starter-test",
+            scope: "test"
+          }
         }
       },
       {
         name: "Security",
         value: {
-          groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-security"
+          dependency: {
+            groupId: "org.springframework.boot",
+            artifactId: "spring-boot-starter-security"
+          },
+          facets: ['security']
         }
       },
       {
         name: "Spring Cloud - Eureka",
         value: {
-          groupId: "org.springframework.cloud",
-          artifactId: "spring-cloud-starter-eureka-server",
-          isSpringCloud: true
+          dependency: {
+            groupId: "org.springframework.cloud",
+            artifactId: "spring-cloud-starter-eureka-server",
+            isSpringCloud: true
+          }
         }
       },
       {
-      	name: "Spring Cloud - Hystrix",
+        name: "Spring Cloud - Hystrix",
         value: {
-          groupId: "org.springframework.cloud",
-          artifactId: "spring-cloud-starter-hystrix",
-          isSpringCloud: true
+          dependency: {
+            groupId: "org.springframework.cloud",
+            artifactId: "spring-cloud-starter-hystrix",
+            isSpringCloud: true
+          }
         }
       },
       {
         name: "Spring Cloud - Config Client",
         value: {
-          groupId: "org.springframework.cloud",
-          artifactId: "spring-cloud-config-client",
-          isSpringCloud: true
+          dependency: {
+            groupId: "org.springframework.cloud",
+            artifactId: "spring-cloud-config-client",
+            isSpringCloud: true
+          }
         }
       },
       {
         name: "Spring Data - JDBC",
         value: {
-          groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-jdbc"
+          dependency: {
+            groupId: "org.springframework.boot",
+            artifactId: "spring-boot-starter-jdbc"
+          }
         }
       },
       {
         name: "Spring Data - JPA",
         value: {
-         groupId: "org.springframework.boot",
-         artifactId: "spring-boot-starter-data-jpa"
-       }
+          dependency: {
+            groupId: "org.springframework.boot",
+            artifactId: "spring-boot-starter-data-jpa"
+          }
+        }
       },
       {
         name: "Spring Data - MongoDB",
         value: {
-          groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-data-mongodb"
+          dependency: {
+            groupId: "org.springframework.boot",
+            artifactId: "spring-boot-starter-data-mongodb"
+          }
         }
       },
       {
         name: "Spring Data - Redis",
         value: {
-          groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-redis"
+          dependency: {
+            groupId: "org.springframework.boot",
+            artifactId: "spring-boot-starter-redis"
+          }
         }
       },
       {
         name: "Spring Data - Gemfire",
         value: {
-          groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-data-gemfire"
+          dependency: {
+            groupId: "org.springframework.boot",
+            artifactId: "spring-boot-starter-data-gemfire"
+          }
         }
       },
       {
         name: "Spring Data - Solr",
         value: {
-          groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-data-solr"
+          dependency: {
+            groupId: "org.springframework.boot",
+            artifactId: "spring-boot-starter-data-solr"
+          }
         }
       },
       {
         name: "Spring Data - Elasticsearch",
         value: {
-          groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-data-elasticsearch"
+          dependency: {
+            groupId: "org.springframework.boot",
+            artifactId: "spring-boot-starter-data-elasticsearch"
+          }
         }
       },
       {
         name: "Database Driver - Derby",
         value: {
-          groupId: "org.apache.derby",
-          artifactId: "derby"
+          dependency: {
+            groupId: "org.apache.derby",
+            artifactId: "derby"
+          }
         }
       },
       {
         name: "Database Driver - H2",
         value: {
-          groupId: "com.h2database",
-          artifactId: "h2"
+          dependency: {
+            groupId: "com.h2database",
+            artifactId: "h2"
+          }
         }
       },
       {
         name: "Database Driver - HSQLDB",
         value: {
-          groupId: "org.hsqldb",
-          artifactId: "hsqldb"
+          dependency: {
+            groupId: "org.hsqldb",
+            artifactId: "hsqldb"
+          }
         }
       },
       {
         name: "Database Driver - MySQL",
         value: {
-          groupId: "mysql",
-          artifactId: "mysql-connector-java"
+          dependency: {
+            groupId: "mysql",
+            artifactId: "mysql-connector-java"
+          }
         }
       },
       {
         name: "Web - Web",
         value: {
-          groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-web"
+          dependency: {
+            groupId: "org.springframework.boot",
+            artifactId: "spring-boot-starter-web"
+          }
         }
       },
       {
         name: "Web - Websocket",
         value: {
-          groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-websocket"
+          dependency: {
+            groupId: "org.springframework.boot",
+            artifactId: "spring-boot-starter-websocket"
+          }
         }
       },
       {
         name: "Web - WS (WebServices)",
         value: {
-          groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-ws"
+          dependency: {
+            groupId: "org.springframework.boot",
+            artifactId: "spring-boot-starter-ws"
+          }
         }
       },
       {
         name: "Web - Jersey (JAX-RS)",
         value: {
-          groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-jersey"
+          dependency: {
+            groupId: "org.springframework.boot",
+            artifactId: "spring-boot-starter-jersey"
+          }
         }
       },
       {
         name: "Web - Rest Repositories",
         value: {
-          groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-data-rest"
+          dependency: {
+            groupId: "org.springframework.boot",
+            artifactId: "spring-boot-starter-data-rest"
+          }
         }
       },
       {
         name: "Web - Mobile",
         value: {
-          groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-mobile"
+          dependency: {
+            groupId: "org.springframework.boot",
+            artifactId: "spring-boot-starter-mobile"
+          }
         }
       },
       {
         name: "Core - AOP",
         value: {
-          groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-aop"
+          dependency: {
+            groupId: "org.springframework.boot",
+            artifactId: "spring-boot-starter-aop"
+          }
         }
       },
       {
         name: "Core - Atomikos (JTA)",
         value: {
-          groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-jta-atomikos"
+          dependency: {
+            groupId: "org.springframework.boot",
+            artifactId: "spring-boot-starter-jta-atomikos"
+          }
         }
       },
       {
         name: "Core - Bitronix (JTA)",
         value: {
-          groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-jta-bitronix"
+          dependency: {
+            groupId: "org.springframework.boot",
+            artifactId: "spring-boot-starter-jta-bitronix"
+          }
         }
       },
       {
         name: "I/O - Batch",
         value: {
-          groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-batch"
+          dependency: {
+            groupId: "org.springframework.boot",
+            artifactId: "spring-boot-starter-batch"
+          }
         }
       },
       {
         name: "I/O - Integration",
         value: {
-          groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-integration"
+          dependency: {
+            groupId: "org.springframework.boot",
+            artifactId: "spring-boot-starter-integration"
+          }
         }
       },
       {
         name: "I/O - JMS - Hornetq",
         value: {
-          groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-hornetq"
+          dependency: {
+            groupId: "org.springframework.boot",
+            artifactId: "spring-boot-starter-hornetq"
+          }
         }
       },
       {
         name: "I/O - AMQP",
         value: {
-          groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-amqp"
+          dependency: {
+            groupId: "org.springframework.boot",
+            artifactId: "spring-boot-starter-amqp"
+          }
         }
       },
       {
         name: "I/O - Mail",
         value: {
-          groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-mail"
+          dependency: {
+            groupId: "org.springframework.boot",
+            artifactId: "spring-boot-starter-mail"
+          }
         }
       },
       {
         name: "Template Engines - Freemarker",
         value: {
-          groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-freemarker"
+          dependency: {
+            groupId: "org.springframework.boot",
+            artifactId: "spring-boot-starter-freemarker"
+          }
         }
       },
       {
         name: "Template Engines - Velocity",
         value: {
-          groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-velocity"
+          dependency: {
+            groupId: "org.springframework.boot",
+            artifactId: "spring-boot-starter-velocity"
+          }
         }
       },
       {
         name: "Template Engines - Groovy Templates",
         value: {
-          groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-groovy-templates"
+          dependency: {
+            groupId: "org.springframework.boot",
+            artifactId: "spring-boot-starter-groovy-templates"
+          }
         }
       },
       {
         name: "Template Engines - Thymeleaf",
         value: {
-          groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-thymeleaf"
+          dependency: {
+            groupId: "org.springframework.boot",
+            artifactId: "spring-boot-starter-thymeleaf"
+          }
         }
       },
       {
         name: "Template Engines - Mustache",
         value: {
-          groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-mustache"
+          dependency: {
+            groupId: "org.springframework.boot",
+            artifactId: "spring-boot-starter-mustache"
+          }
         }
       },
       {
         name: "Social - Facebook",
         value: {
-          groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-social-facebook"
+          dependency: {
+            groupId: "org.springframework.boot",
+            artifactId: "spring-boot-starter-social-facebook"
+          }
         }
       },
       {
         name: "Social - Linkedin",
         value: {
-          groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-social-linkedin"
+          dependency: {
+            groupId: "org.springframework.boot",
+            artifactId: "spring-boot-starter-social-linkedin"
+          }
         }
       },
       {
         name: "Social - Twitter",
         value: {
-          groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-social-twitter"
+          dependency: {
+            groupId: "org.springframework.boot",
+            artifactId: "spring-boot-starter-social-twitter"
+          }
         }
       },
       {
         name: "Ops - Actuator - Hystrix Metrics Stream",
         value: {
-          groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-actuator"
+          dependency: {
+            groupId: "org.springframework.boot",
+            artifactId: "spring-boot-starter-actuator"
+          }
         }
       },
       {
         name: "Ops - Cloud Connectors",
         value: {
-          groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-cloud-connectors"
+          dependency: {
+            groupId: "org.springframework.boot",
+            artifactId: "spring-boot-starter-cloud-connectors"
+          }
         }
       },
       {
         name: "Ops - Remote Shell",
         value: {
-          groupId: "org.springframework.boot",
-          artifactId: "spring-boot-starter-remote-shell"
+          dependency: {
+            groupId: "org.springframework.boot",
+            artifactId: "spring-boot-starter-remote-shell"
+          }
         }
       }
     ];
@@ -349,10 +432,10 @@ module.exports = {
         default: 'jar'
       },
       {
-      	type: 'input',
-      	name: 'serverPort',
-      	message: 'Which server port ?',
-      	default: '8080'
+        type: 'input',
+        name: 'serverPort',
+        message: 'Which server port ?',
+        default: '8080'
       },
       {
         type: 'checkbox',
@@ -363,17 +446,17 @@ module.exports = {
     ];
     inquirer.prompt(questions, function( answers ) {
       /*
-      if(answers.buildTool == 'maven') {
-        gfile.copy(
-          path.join(__dirname,'../model/config.@maven.yml'),
-          path.join(process.cwd(),'model/config.@maven.yml'));
-      }
-      if(answers.buildTool == 'gradle') {
-        gfile.copy(
-          path.join(__dirname,'../model/config.@gradle.yml'),
-          path.join(process.cwd(),'model/config.@gradle.yml'));
-      }
-      */
+       if(answers.buildTool == 'maven') {
+       gfile.copy(
+       path.join(__dirname,'../model/config.@maven.yml'),
+       path.join(process.cwd(),'model/config.@maven.yml'));
+       }
+       if(answers.buildTool == 'gradle') {
+       gfile.copy(
+       path.join(__dirname,'../model/config.@gradle.yml'),
+       path.join(process.cwd(),'model/config.@gradle.yml'));
+       }
+       */
 
       var data = gfile.loadYaml(path.join(process.cwd(),'Genjsfile.yml'));
 
@@ -413,35 +496,65 @@ module.exports = {
       if(data.global.version.java == null) {
         data.global.version.java = answers.javaVersion;
       }
-      
+
       var isSpringCloud = false;
       for(var i=0; i<answers.dependenciesSelected.length; i++) {
-      	var dependency = answers.dependenciesSelected[i];
-      	if(dependency.isSpringCloud) {
-      	  isSpringCloud = true
-      	}
+        var dependency = answers.dependenciesSelected[i];
+        if(dependency.isSpringCloud) {
+          isSpringCloud = true
+        }
       }
       if(isSpringCloud) {
         data.global.version.springcloud = '1.0.0.RELEASE';
       }
-      
+
       if(data.global.build == null) {
         data.global.build = {};
       }
       data.global.build.tool = answers.buildTool;
 
       if(data.global.server == null) {
-      	data.global.server = {};
+        data.global.server = {};
       }
       data.global.server.port = answers.serverPort;
+
+      var facets = {};
+      for(var i=0; i<answers.dependenciesSelected.length; i++) {
+        var dependencyFacets = answers.dependenciesSelected[i].facets;
+        if(dependencyFacets != null) {
+          for (var j = 0; j<dependencyFacets.length; j++) {
+            if(facets == null) {
+              facets = {};
+            }
+            facets[dependencyFacets[j]] = true;
+          }
+        }
+      }
+      data.facets = facets;
 
       gfile.writeYaml(path.join(process.cwd(),'Genjsfile.yml'), data);
 
       var data = {
-        dependencies: answers.dependenciesSelected
+        dependencies: []
       };
+      for(var i=0; i<answers.dependenciesSelected.length; i++) {
+        data.dependencies.push(answers.dependenciesSelected[i].dependency);
+      }
 
       gfile.writeYaml(path.join(process.cwd(),'model','config.@build.yml'), data);
+
+      console.log(facets);
+      console.log(facets.security);
+      if(facets.security) {
+        var data = {
+          user: {
+            name: 'user',
+            password: 'user',
+            role: 'USER'
+          }
+        };
+        gfile.writeYaml(path.join(process.cwd(),'model','config.@security.yml'), data);
+      }
 
       if(callback) {
         callback();
