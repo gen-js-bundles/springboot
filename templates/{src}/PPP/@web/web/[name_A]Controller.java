@@ -41,12 +41,19 @@ each(current.tags.web.paths, function(path, pathUri) {
         paramsStr += ') ';
       }
       paramsStr += param.type + ' ' + paramName;
-    })
+    });
+
+    if(method.return == null) {
+        var methodReturn = 'void';
+    } else{
+        var methodReturn = method.return;
+    }
 %>
     @RequestMapping("<%=pathUri%>")
-    public <%=method.return%> <%=method.name%>(<%=paramsStr%>) { // <[<%=method.name%>:
-        // model.addAttribute("name", name);
+    public <%=methodReturn%> <%=method.name%>(<%=paramsStr%>) { // <[<%=method.name%>:
+        <% if(method.return == 'String') { %>
         return "<%=method.name%>";
+        <% } %>
     } // ]>
 
 
