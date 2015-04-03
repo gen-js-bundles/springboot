@@ -164,7 +164,8 @@ module.exports = {
           dependency: {
             groupId: "org.springframework.boot",
             artifactId: "spring-boot-starter-web"
-          }
+          },
+          facets: ['web']
         }
       },
       {
@@ -442,6 +443,28 @@ module.exports = {
         name: 'dependenciesSelected',
         message: 'Which dependencies ?',
         choices: dependenciesChoices
+      },
+      {
+        type: 'confirm',
+        name: 'wro4j',
+        message: 'Use wro4j to manage static resources ?',
+        default: true,
+        when: function(answers) {
+          var hasWeb = false;
+          if(answers.dependenciesSelected != null) {
+            for (var i = 0; i < answers.dependenciesSelected.length; i++) {
+              var facets = answers.dependenciesSelected[i].facets;
+              if( facets != null) {
+                for (var j = 0; j < facets.length; j++) {
+                  if (facets[j] == 'web') {
+                    hasWeb = true;
+                  }
+                }
+              }
+            }
+          }
+          return hasWeb;
+        }
       }
     ];
     inquirer.prompt(questions, function( answers ) {
@@ -530,15 +553,24 @@ module.exports = {
           }
         }
       }
-      data.facets = facets;
+      if(answers.wro4j) {
+        facets.wro4j = true;
+      }
+      data.global.facets = facets;
 
       gfile.writeYaml(path.join(process.cwd(),'Genjsfile.yml'), data);
 
       var data = {
-        dependencies: []
+        dependencies: [],
+        properties: {}
       };
       for(var i=0; i<answers.dependenciesSelected.length; i++) {
         data.dependencies.push(answers.dependenciesSelected[i].dependency);
+      }
+      if(answers.wro4j) {
+        data.properties = {
+          'wro4j.version': '1.7.6'
+        };
       }
 
       gfile.writeYaml(path.join(process.cwd(),'model','config.@build.yml'), data);

@@ -28,6 +28,12 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<start-class><%= project.package %>.Application</start-class>
 		<java.version><%= version.java %></java.version>
+        <%
+          var properties = all.config.tags.build.properties;
+          each(properties, function(propertyValue, propertyName) {
+        %>
+        <<%=propertyName%>><%=propertyValue%></<%=propertyName%>>
+        <% }) %>
 	</properties>
 
     <dependencies>
@@ -38,6 +44,7 @@
         <%
           var dependencies = all.config.tags.build.dependencies;
           each(dependencies, function(dependency) {
+            if( !facets.wro4j || dependency.groupId.indexOf('org.webjar') < 0) {
         %>
 		<dependency>
 			<groupId><%= dependency.groupId %></groupId>
@@ -50,6 +57,7 @@
 			<% } %>
 		</dependency>
         <%
+            }
           })
         %>
     </dependencies>
@@ -60,6 +68,73 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+            <% if( facets.wro4j ) { %>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <!-- Serves *only* to filter the wro.xml so it can get an absolute
+                            path for the project -->
+                        <id>copy-resources</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${basedir}/target/wro</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>src/main/wro</directory>
+                                    <filtering>true</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>ro.isdc.wro4j</groupId>
+                <artifactId>wro4j-maven-plugin</artifactId>
+                <version>${wro4j.version}</version>
+                <executions>
+                    <execution>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <wroManagerFactory>ro.isdc.wro.maven.plugin.manager.factory.ConfigurableWroManagerFactory</wroManagerFactory>
+                    <cssDestinationFolder>${project.build.directory}/generated-resources/static/css</cssDestinationFolder>
+                    <jsDestinationFolder>${project.build.directory}/generated-resources/static/js</jsDestinationFolder>
+                    <wroFile>${project.build.directory}/wro/wro.xml</wroFile>
+                    <extraConfigFile>${basedir}/src/main/wro/wro.properties</extraConfigFile>
+                    <contextFolder>${basedir}/src/main/wro</contextFolder>
+                </configuration>
+                <dependencies>
+                    <%
+                      var dependencies = all.config.tags.build.dependencies;
+                      each(dependencies, function(dependency) {
+                        if(dependency.groupId.indexOf('org.webjar') == 0) {
+                    %>
+                    <dependency>
+                        <groupId><%= dependency.groupId %></groupId>
+                        <artifactId><%= dependency.artifactId %></artifactId>
+                        <% if(dependency.version != null) { %>
+                        <version><%= dependency.version %></version>
+                        <% } %>
+                        <% if(dependency.scope != null) { %>
+                        <scope><%= dependency.scope %></scope>
+                        <% } %>
+                    </dependency>
+                    <%
+                        }
+                      })
+                    %>
+                </dependencies>
+            </plugin>
+            <% } %>
 		</plugins>
 	</build>
 

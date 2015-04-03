@@ -16,6 +16,13 @@ each(current.tags.web.paths, function(path, pathUri) {
     var first = true;
     each(method.params, function(param, paramName) {
       if(first) {first = false;} else {paramsStr += ', ';}
+      if(param.pathVariable) {
+        paramsStr += '@PathVariable';
+        if(param.pathVariable.name != null) {
+          if(!hasArg) {hasArg=true;} else {paramsStr += ', ';}
+          paramsStr += '("'+param.pathVariable.name+'") ';
+        }
+      }
       if(param.requestParam) {
         var hasArg = false;
         paramsStr += '@RequestParam(';
@@ -38,8 +45,8 @@ each(current.tags.web.paths, function(path, pathUri) {
 %>
     @RequestMapping("<%=pathUri%>")
     public <%=method.return%> <%=method.name%>(<%=paramsStr%>) { // <[<%=method.name%>:
-        model.addAttribute("name", name);
-        return "greeting";
+        // model.addAttribute("name", name);
+        return "<%=method.name%>";
     } // ]>
 
 
