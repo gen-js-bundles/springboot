@@ -159,6 +159,16 @@ module.exports = {
         }
       },
       {
+        name: "Database Driver - PostgreSQL",
+        value: {
+          dependency: {
+            groupId: "org.postgresql",
+            artifactId: "postgresql",
+            version: "9.4-1201-jdbc41"
+          }
+        }
+      },
+      {
         name: "Web - Web",
         value: {
           dependency: {
