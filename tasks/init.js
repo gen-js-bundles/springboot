@@ -525,7 +525,7 @@ module.exports = {
       if(data.global.version == null) {
         data.global.version = {};
       }
-      data.global.version.springboot = '1.2.2';
+      data.global.version.springboot = '1.2.3';
       if(data.global.version.java == null) {
         data.global.version.java = answers.javaVersion;
       }
